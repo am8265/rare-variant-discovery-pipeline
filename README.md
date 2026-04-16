@@ -14,7 +14,6 @@ At CHOP, I worked on a multi-cloud rare variant discovery pipeline as part of a 
 - Built WDL workflow for post-joint-genotyping variant normalization
 - Created Docker image (vt + bcftools) hosted on AWS ECR
 - Integrated with AWS HealthOmics for production runs
-- Validated against GIAB HG002 truthset
 
 ### 2. Athena SQL Data Engineering
 - Wrote variant aggregation queries (GROUP BY variant_id → homs/hets/cohort AF)
@@ -23,18 +22,16 @@ At CHOP, I worked on a multi-cloud rare variant discovery pipeline as part of a 
 
 ### 3. Dashboard Feature Development
 - Added new visualization features to Metabase dashboard (Python - proprietary code)
-- Implemented gene-level aggregation views
-- Built QC metric calculators for pipeline monitoring
+
 
 ### 4. Pipeline Testing & Validation
 - GIAB benchmarking workflows
-- Ti/Tv ratio validation
 - Cohort-level QC metrics
 - **DRAGEN vs GATK accuracy comparison (hap.py)**
 - **AWS compute cost analysis (ICA vs EC2)**
 
 ### 5. Post-DRAGEN Sample QC
-- Automated sample-level QC checks (coverage, mapping rate, Ti/Tv)
+- Automated sample-level QC checks (coverage, mapping rate)
 - Cohort QC aggregation script
 - Manifest generation for joint genotyping (PASS samples only)
 
@@ -63,7 +60,6 @@ Components in this repo were tested on:
 - **Synthetic test data** — generated with `generate_test_gvcf.py`
 
 Validation metrics matched production expectations:
-- Ti/Tv ratio: ~2.0-2.1 (WGS), ~3.0-3.3 (WES)
 - Het/hom ratio: expected ranges per population
 - Rare variant yield: 2-4% of total variants post-gnomAD filter
 
@@ -238,7 +234,7 @@ aws athena start-query-execution \
 Tested on:
 - 1000 Genomes chr22 trio (NA12878 family)
 - GIAB HG002 truthset benchmarking
-- CHOP internal cohort (788 WGS samples) — output metrics validated against publication data
+
 
 Expected outputs:
 - Variant summary: ~50M variants (full WGS cohort)
