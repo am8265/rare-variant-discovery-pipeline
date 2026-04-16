@@ -262,10 +262,10 @@ Expected outputs:
 ## Author
 
 **Ayan Malakar**  
-Senior Bioinformatics Scientist  
-9 years NGS pipeline development · AWS · GCP · WDL · SQL
+Bioinformatics Scientist  
 
-[GitHub](https://github.com/am5153) · [LinkedIn](https://linkedin.com/in/ayanmalakar)
+
+[GitHub](https://github.com/am8265) · [LinkedIn](https://linkedin.com/in/ayanmalakar)
 
 ---
 
